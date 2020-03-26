@@ -21,6 +21,6 @@ export default function Blog(){
                 <PostLink title="Learn Next.js is awesome" />
                 <PostLink title="Deploy apps with Zeit" />
             </ul>
-        </Layout>
+        </Layout> 
     )
 }
