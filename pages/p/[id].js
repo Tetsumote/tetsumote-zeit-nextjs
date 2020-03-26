@@ -16,7 +16,7 @@ Post.getInitialProps = async function(context) {
 
   console.log(`Fetched show: ${show.name}`);
 
-  return { show };
+  return { show }; 
 };
 
 export default Post;
