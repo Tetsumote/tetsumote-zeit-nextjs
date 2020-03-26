@@ -7,7 +7,7 @@ function getPosts(){
         {id: 'learn-nextjs', title: 'Learn Next.js is awesome'},
         {id: 'deploy-nextjs', title: 'Deploy apps with ZEIT'},
     ]
-}
+} 
 
 const PostLink = ({ post }) => (
     <li>
