@@ -16,7 +16,7 @@ export default function Quotes(){
   const author = data?.author;
   let quote = data?.quote;
 
-  if (!data) quote = 'Loading...';
+  if (!data) quote = 'Loading...'; 
   if (error) quote = 'Failed to fetch the quote.';
 
     return(
