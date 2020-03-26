@@ -9,6 +9,29 @@ function getPosts(){
     ]
 }
 
+const PostLink = ({ post }) => (
+    <li>
+      <Link href="/my-blog/[id]" as={`/my-blog/${post.id}`}>
+        <a>{post.title}</a>
+      </Link>
+      <style jsx>{`
+      li {
+        list-style: none;
+        margin: 5px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: blue;
+        font-family: 'Arial';
+      }
+
+      a:hover {
+        opacity: 0.6;
+      }
+    `}</style>
+    </li>
+  );
 
 export default function About(){
     return(
@@ -16,12 +39,10 @@ export default function About(){
             <p>This is about page</p>
             <p>My Blog</p>
             <ul>
-                {getPosts().map(post => (
-                    <li key={`${post.id}`}>
-                        <a href="/my-blog/[id]" as={`/p/${post.id}`}>{post.title}</a>
-                    </li>
-                ))}
-            </ul>
+        {getPosts().map(post => (
+          <PostLink key={post.id} post={post} />
+        ))}
+      </ul>
             <style jsx>
                 {`
                     h1,
@@ -31,20 +52,6 @@ export default function About(){
             
                     ul {
                       padding: 0;
-                    }
-            
-                    li {
-                      list-style: none;
-                      margin: 5px 0;
-                    }
-            
-                    a {
-                      text-decoration: none;
-                      color: blue;
-                    }
-            
-                    a:hover {
-                      opacity: 0.6;
                     }
                 `}
             </style>
